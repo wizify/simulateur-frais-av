@@ -6,6 +6,7 @@ import { ResultStats } from './components/ResultStats';
 import { FeeDonut } from './components/FeeDonut';
 import { ProjectionChart } from './components/ProjectionChart';
 import { FeeBreakdownTable } from './components/FeeBreakdownTable';
+import { MarketComparisonCard } from './components/MarketComparisonCard';
 import { simulate, type SimulationInput } from './lib/simulate';
 import { tooltips } from './content/tooltips';
 
@@ -122,6 +123,12 @@ export default function App() {
                 onChange={setUcFee}
               />
             </SectionCard>
+
+            <MarketComparisonCard
+              entryFee={entryFee}
+              mgmtFee={mgmtFee}
+              ucFee={ucFee}
+            />
           </div>
 
           {/* Results */}
