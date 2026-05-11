@@ -1,0 +1,69 @@
+@import './styles/of-tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--of-font);
+  color: var(--of-ink);
+  background: var(--of-bg);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom range slider — single source of truth */
+input[type='range'].of-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--of-line-3);
+  outline: none;
+  cursor: pointer;
+}
+input[type='range'].of-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--of-blue);
+  box-shadow: 0 2px 8px rgba(51, 64, 250, 0.25);
+  cursor: grab;
+  transition: transform 120ms var(--of-ease);
+}
+input[type='range'].of-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.08);
+}
+input[type='range'].of-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--of-blue);
+  box-shadow: 0 2px 8px rgba(51, 64, 250, 0.25);
+  cursor: grab;
+}
+
+/* Tooltip reveal */
+.of-tooltip {
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 150ms var(--of-ease), transform 150ms var(--of-ease);
+}
+.of-tooltip-trigger:hover .of-tooltip,
+.of-tooltip-trigger:focus-within .of-tooltip,
+.of-tooltip:hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

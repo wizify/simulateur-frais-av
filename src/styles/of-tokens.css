@@ -1,0 +1,215 @@
+/* ============================================================
+   OF Finance — Design Tokens
+   Colors, type, spacing, radii, shadows.
+   Source: Figma "Site OF (1).fig" + METADATA.md.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Brand color ---------- */
+  --of-blue:           #3340FA;   /* primary, 250×  */
+  --of-blue-hover:     #4450FA;   /* primary on dark/divider, 9× */
+  --of-blue-pressed:   #2A36E0;   /* derived ~10% darker */
+  --of-blue-50:        #F0F4FF;   /* tint surface, 29× */
+  --of-blue-100:       #E8E9FF;   /* icon bg / soft surface, 107× */
+  --of-blue-200:       #D6D9FE;   /* badge bg, 6× */
+  /* note: --of-blue-300 removed — was a duplicate of --of-line-3 (#E2E8F0). Use --of-line-3 for FAQ dividers. */
+
+  /* ---------- Neutrals (greys) ---------- */
+  --of-ink:            #1A1A1A;   /* fg primary text, 142× */
+  --of-ink-2:          #555555;   /* body / secondary text, 140× */
+  --of-ink-3:          #666666;   /* faq answer body, 6× */
+  --of-mute:           #999999;   /* placeholder / meta, 164× */
+  --of-mute-2:         #CCCCCC;   /* footer fine print, 121× */
+  --of-line:           #D1D5DB;   /* input/filter border, 11× */
+  --of-line-2:         #E5E7EB;   /* card border alt, 5× */
+  --of-line-3:         #E2E8F0;   /* faq divider, 6× */
+  --of-bg:             #FFFFFF;
+  --of-bg-soft:        #F8F9FA;   /* alt section bg, 24× */
+  --of-bg-soft-2:      #FAFBFC;   /* even softer surface, 5× */
+  --of-bg-input:       #F0F0F0;   /* video placeholder, 5× */
+
+  /* ---------- Semantic accent ---------- */
+  --of-mint:           #26DEB5;   /* OPCO funded / success */
+  --of-coral:          #FF6B5C;   /* alert outline accent */
+  --of-amber:          #FFBE5C;   /* warn */
+  --of-violet:         #C938FF;   /* deep purple text accent */
+  --of-violet-bg:      #F4DBFF;   /* violet pill bg, derived from #C938FF */
+  --of-info-bg:        #E8E9FF;   /* info pill bg, brand-blue tint */
+  --of-info-fg:        #3340FA;
+  --of-warning-bg:     #FFE2DD;   /* warning pill bg, derived from #FF6B5C */
+  --of-warning-fg:     #C44430;
+  --of-success-bg:     #D4F9EF;   /* success pill bg, derived from #26DEB5 */
+  --of-success-fg:     #0E8F6F;
+
+  /* ---------- Surface on blue (overlays) ---------- */
+  --of-on-blue:                  rgba(255,255,255,1);
+  --of-on-blue-soft:              rgba(255,255,255,.08);
+  --of-on-blue-soft-border:       rgba(255,255,255,.13);
+  --of-on-blue-mute:              rgba(255,255,255,.80);
+  --of-on-blue-faint:             rgba(255,255,255,.67);
+  --of-on-blue-fine:              rgba(255,255,255,.50);
+
+  /* ---------- Type ---------- */
+  --of-font:           "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --of-fw-regular:     400;
+  --of-fw-medium:      500;
+  --of-fw-semibold:    600;
+  --of-fw-bold:        700;
+
+  /* type scale (px) */
+  --of-fs-display:     42px;   /* hero H1 */
+  --of-fs-h1:          38px;   /* section title */
+  --of-fs-h2:          32px;   /* newsletter title */
+  --of-fs-h3:          28px;   /* banner title */
+  --of-fs-h4:          24px;   /* card column title */
+  --of-fs-h5:          20px;   /* logo / block title */
+  --of-fs-h6:          18px;   /* card title / subtitle */
+  --of-fs-body:        16px;
+  --of-fs-body-sm:     15px;
+  --of-fs-meta:        14px;
+  --of-fs-caption:     13px;
+  --of-fs-mini:        12px;
+  --of-fs-fine:        11px;
+
+  /* tight letter-spacing on headings (Figma uses negative tracking) */
+  --of-track-display:  -1.5px;  /* 42px */
+  --of-track-h1:       -2px;    /* 38px */
+  --of-track-h2:       -1px;    /* 32px */
+  --of-track-eyebrow:  2px;     /* uppercase eyebrows */
+
+  /* ---------- Radii ---------- */
+  --of-radius-pill:    28px;    /* nav bar + large CTA pills (aligned) */
+  --of-radius-cta:     28px;    /* circular CTA pill */
+  --of-radius-icon:    16px;    /* icon tile */
+  --of-radius-lg:      20px;    /* video block */
+  --of-radius-md:      12px;    /* card / cta default */
+  --of-radius-sm:      8px;     /* small buttons / badges */
+  --of-radius-section: 40px 40px 0 0;  /* blue protection top corners */
+
+  /* ---------- Spacing ---------- */
+  --of-space-1:  4px;
+  --of-space-2:  8px;
+  --of-space-3:  12px;
+  --of-space-4:  16px;
+  --of-space-5:  20px;
+  --of-space-6:  24px;
+  --of-space-8:  32px;
+  --of-space-10: 40px;
+  --of-space-12: 48px;
+  --of-space-14: 56px;
+  --of-space-16: 64px;
+  --of-space-20: 80px;
+  --of-space-24: 100px;       /* section padding */
+  --of-page-pad: 120px;       /* page horizontal padding */
+  --of-content-max: 1200px;   /* nav + footer max content */
+
+  /* ---------- Shadows ---------- */
+  /* Aligned ladder — opacity .06 → .08 → .10 → .25, blur 17 → 24 → 40 → 70 */
+  --of-shadow-nav:     0 1px 17px  rgba(0, 0, 0, 0.08);    /* 01 sticky nav */
+  --of-shadow-card:    0 8px 24px  rgba(0, 0, 0, 0.06);    /* 02 card lift */
+  --of-shadow-hover:   0 12px 40px rgba(0, 0, 0, 0.10);    /* 03 card hover / menu */
+  --of-shadow-section: 0 4px 70px  rgba(0, 0, 0, 0.25);    /* 04 blue protection */
+  --of-shadow-up:      0 -4px 24px rgba(0, 0, 0, 0.125);   /* underside section */
+
+  /* ---------- Motion ---------- */
+  --of-ease:           cubic-bezier(.4, 0, .2, 1);
+  --of-ease-out:       cubic-bezier(.16, 1, .3, 1);
+  --of-dur-fast:       120ms;
+  --of-dur-base:       200ms;
+  --of-dur-slow:       320ms;
+}
+
+/* ============================================================
+   Semantic element styles — apply by class or as a base.
+   ============================================================ */
+
+.of, .of body, .of-page {
+  font-family: var(--of-font);
+  color: var(--of-ink);
+  background: var(--of-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+.of h1, .of-h1 {
+  font-family: var(--of-font);
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-display);
+  line-height: 1.05;
+  letter-spacing: var(--of-track-display);
+  color: var(--of-ink);
+  margin: 0;
+}
+.of h2, .of-h2 {
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-h1);
+  line-height: 1.15;
+  letter-spacing: var(--of-track-h1);
+  color: var(--of-ink);
+  margin: 0;
+}
+.of h3, .of-h3 {
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-h3);
+  line-height: 1.2;
+  color: var(--of-ink);
+  margin: 0;
+}
+.of h4, .of-h4 {
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-h4);
+  line-height: 1.2;
+  color: var(--of-ink);
+  margin: 0;
+}
+.of h5, .of-h5 {
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-h5);
+  line-height: 1.25;
+  color: var(--of-ink);
+  margin: 0;
+}
+
+/* Eyebrow — tracked, uppercase, small, blue or white-on-blue */
+.of-eyebrow {
+  font-family: var(--of-font);
+  font-weight: var(--of-fw-bold);
+  font-size: var(--of-fs-meta);
+  letter-spacing: var(--of-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--of-blue);
+  line-height: 1;
+}
+.of-eyebrow--on-blue { color: #fff; }
+
+/* Body */
+.of p, .of-body {
+  font-family: var(--of-font);
+  font-weight: var(--of-fw-regular);
+  font-size: var(--of-fs-body);
+  line-height: 1.5;
+  color: var(--of-ink-2);
+  margin: 0;
+}
+.of-body--sm { font-size: var(--of-fs-body-sm); }
+.of-meta {
+  font-size: var(--of-fs-meta);
+  color: var(--of-mute);
+  font-weight: var(--of-fw-medium);
+}
+.of-fine {
+  font-size: var(--of-fs-fine);
+  color: var(--of-mute-2);
+  line-height: 1.5;
+}
+
+/* Links */
+.of a, .of-link {
+  color: var(--of-blue);
+  text-decoration: none;
+  font-weight: var(--of-fw-bold);
+  transition: color var(--of-dur-fast) var(--of-ease);
+}
+.of a:hover, .of-link:hover { color: var(--of-blue-pressed); }
